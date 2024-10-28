@@ -5,6 +5,10 @@ import viteLogo from '/vite.svg';
 
 function App() {
   const [count, setCount] = useState(0);
+  const [like, setLike] = useState(false);
+  const handleChange = (liked: boolean) => {
+    setLike(liked);
+  };
 
   return (
     <>
@@ -14,9 +18,18 @@ function App() {
         </a>
         <a href="https://react.dev" target="_blank">
           <LoveHeartEffect
+            height={240}
+            width={240}
+            liked={like}
+            containerStyle={{ display: 'inline-block' }}
+            onChange={handleChange}
+          />
+          <LoveHeartEffect
             height={200}
             width={200}
+            liked={like}
             containerStyle={{ display: 'inline-block' }}
+            onChange={handleChange}
           />
         </a>
       </div>

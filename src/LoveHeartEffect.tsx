@@ -1,21 +1,21 @@
 import { useEffect, useRef, useState } from 'react';
-import './LoveHeartEffect.css';
+import './loveHeartEffect.css';
 export interface LoveHeartEffectProps {
   height?: number;
   width?: number;
   heartBeat?: boolean;
   heartBeatTimeInterval?: number;
-  checked?: boolean;
+  liked?: boolean;
   containerStyle?: React.CSSProperties;
   containerCls?: string;
-  onChange?: (checked: boolean, e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (liked: boolean, e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 const LoveHeartEffect = ({
   height = 100,
   width = 100,
   heartBeatTimeInterval = 1000,
   heartBeat = false,
-  checked = false,
+  liked = false,
   onChange,
   containerCls = '',
   containerStyle: containerStyleParams = {},
@@ -28,14 +28,15 @@ const LoveHeartEffect = ({
     margin: `${(size / 4) * -1}px`,
   } as React.CSSProperties;
 
-  const [isChecked] = useState(checked);
+  const [isLiked] = useState(liked);
+
   const labelRef = useRef<HTMLLabelElement>(null);
   const cbRef = useRef<HTMLInputElement>(null);
   const [isInitial, setIsInitial] = useState(true);
   const heartBeatRef = useRef<number>();
 
   const [labelStyles, setLabelStyles] = useState<React.CSSProperties>(() => {
-    return isChecked
+    return isLiked
       ? {
           backgroundPosition: 'right',
         }
@@ -43,7 +44,7 @@ const LoveHeartEffect = ({
   });
 
   const onChangeCb = (
-    checked: boolean,
+    liked: boolean,
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     if (labelRef.current) {
@@ -52,7 +53,7 @@ const LoveHeartEffect = ({
     if (isInitial) setLabelStyles({});
     setIsInitial(false);
     if (heartBeat) return;
-    onChange?.(checked, e);
+    onChange?.(liked, e);
   };
 
   useEffect(() => {
@@ -83,11 +84,11 @@ const LoveHeartEffect = ({
         id={IDRef.current}
         ref={cbRef}
         className="cbBox_love"
-        defaultChecked={isChecked}
+        defaultChecked={isLiked}
         onChange={(e) => onChangeCb(e.target.checked, e)}
       />
       <label
-        title={`${isChecked}`}
+        title={`${isLiked}`}
         className="cbBox-love"
         htmlFor={IDRef.current}
         style={{ ...labelStyles, width: width, height: height }}
