@@ -17,9 +17,13 @@ dependencies:
   },
 ```
 
+### Install
+
 ```bash
     npm i react-love-heart-effect
 ```
+
+### Usage
 
 ```react
 import ReactLoveHeartEffect from 'react-love-heart-effect';
