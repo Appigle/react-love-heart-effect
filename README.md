@@ -2,7 +2,7 @@
 
 ## Demo
 
-![Effect]("/dist/ReactLoveHeartEffect.gif")
+![Effect]("https://www.unpkg.com/react-love-heart-effect/dist/ReactLoveHeartEffect.gif")
 
 ## Getting Started
 
