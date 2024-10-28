@@ -25,6 +25,36 @@ dependencies:
 
 ### Usage
 
+\*.d.ts
+
+```ts
+/**
+ * LoveHeartEffectProps defines the properties interface for a heart effect component.
+ */
+export interface LoveHeartEffectProps {
+  // height sets the height of the heart effect component in pixels. This is an optional property.
+  height?: number;
+  // width sets the width of the heart effect component in pixels. This is an optional property.
+  width?: number;
+  // heartBeat indicates whether to enable the heartbeat animation effect. Default is disabled. This is an optional property.
+  heartBeat?: boolean;
+  // heartBeatTimeInterval sets the interval time for the heartbeat animation in milliseconds. This is an optional property.
+  heartBeatTimeInterval?: number;
+  // liked indicates whether the user has liked, used to control the initial state of the heart effect. This is an optional property.
+  liked?: boolean;
+  // containerStyle sets custom styles for the component container. This is an optional property.
+  containerStyle?: React.CSSProperties;
+  // containerCls sets custom class names for the component container. This is an optional property.
+  containerCls?: string;
+  /**
+   * onChange is a callback function that is called when the like status changes.
+   * It receives two parameters: the updated like status and the original input element event object.
+   * This is an optional property.
+   */
+  onChange?: (liked: boolean, e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+```
+
 ```react
 import ReactLoveHeartEffect from 'react-love-heart-effect';
 import 'react-love-heart-effect/styles'; // import style
@@ -52,6 +82,10 @@ function App() {
 export default App;
 
 ```
+
+## Caveat
+
+1. The `ReactLoveHeartEffect` component is a uncontrolled component. The `onChange` prop is used to notify you when the user interacts with the heart.
 
 ## Develop Note
 
