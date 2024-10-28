@@ -1,9 +1,52 @@
 # Readme
 
+## Demo
+
+![Effect]("/dist/ReactLoveHeartEffect.gif")
+
 ## Getting Started
 
+### Prerequisite
+
+dependencies:
+
+```json
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+```
+
 ```bash
-    pnpm install
+    npm i react-love-heart-effect
+```
+
+```react
+import ReactLoveHeartEffect from 'react-love-heart-effect';
+import 'react-love-heart-effect/styles'; // import style
+
+function App() {
+  const handleLikeChange = (like: boolean) => {
+    console.log(
+      '%c [ like ]-6',
+      'font-size:13px; background:pink; color:#bf2c9f;',
+      like
+    );
+  };
+  return (
+    <ReactLoveHeartEffect
+      liked={true}
+      height={140}
+      width={150}
+      heartBeat
+      heartBeatTimeInterval={3000}
+      onChange={handleLikeChange}
+    />
+  );
+}
+
+export default App;
+
 ```
 
 ## Develop Note
