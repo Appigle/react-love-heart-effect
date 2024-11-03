@@ -2,7 +2,7 @@
   "name": "react-love-heart-effect",
   "private": false,
   "description": "React Love Heart Effect or 爱心❤️点赞效果",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
