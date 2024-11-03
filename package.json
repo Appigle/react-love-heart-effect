@@ -7,6 +7,11 @@
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/LoveHeartEffect.d.ts",
+  "author": "Ray Chen",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Appigle/react-love-heart-effect.git"
+  },
   "keywords": [
     "react",
     "heart",
